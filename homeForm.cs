@@ -6,7 +6,6 @@ namespace Gestione_Calciatori
     {
         Lista lista1 = new();
         bool endedInit = false;
-        string test = "ciao";
 
         public homeForm()
         {
