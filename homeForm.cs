@@ -382,7 +382,6 @@ namespace Gestione_Calciatori
 
         private void AggiornamentoDati()
         {
-
             listagiocatoriComboBox.DataSource = lista1.ListaCompleta();
             listagiocatoriComboBox.DisplayMember = "Nome";
             listagiocatoriComboBox.ValueMember = "Nome";
@@ -395,7 +394,6 @@ namespace Gestione_Calciatori
             listagiocatoriinforComboBox.DisplayMember = "Nome";
             listagiocatoriinforComboBox.ValueMember = "Nome";
             listagiocatoriinforComboBox.SelectedIndex = -1;
-
         }
 
         #endregion

@@ -134,7 +134,6 @@
                             p1 = p1.Next;
                         }
                     }
-
                 }
             }
             while (!end);
