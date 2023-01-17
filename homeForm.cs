@@ -24,6 +24,7 @@ namespace Gestione_Calciatori
             #endregion
         }
 
+
         #region Bottoni
 
         private void caricaButton_Click(object sender, EventArgs e)
@@ -51,6 +52,9 @@ namespace Gestione_Calciatori
                 giocatoriListBox.DataSource = lista1.ListaCompleta();
                 giocatoriListBox.DisplayMember = "Nome";
                 giocatoriListBox.ValueMember = "Nome";
+
+                AggiornamentoDati();
+
                 endedInit = true;
 
                 #endregion
@@ -100,6 +104,8 @@ namespace Gestione_Calciatori
                         Convert.ToInt32(goalTextBox.Texts),
                         null);
                     lista1.Aggiornamento(giocatore1);
+
+                    AggiornamentoDati();
                 }
             }
         }
@@ -125,19 +131,22 @@ namespace Gestione_Calciatori
 
         private void cercagoalButton_Click(object sender, EventArgs e)
         {
-            string[] risultati = lista1.Ricerca(cercagoalTextBox.Texts);
+            string[] risultati = lista1.Ricerca(listagiocatoriComboBox.Texts);
 
             MessageBox.Show("Ecco i risultati della ricerca: \n\n" +
-                "Numero di goal segnati da " + cercagoalTextBox.Texts + ":\n\n" + risultati[2],
+                "Numero di goal segnati da " + listagiocatoriComboBox.Texts + ":\n\n" + risultati[2],
                 "Informazione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+            listagiocatoriComboBox.SelectedIndex = -1;
+
         }
 
         private void cercasquadraButton_Click(object sender, EventArgs e)
         {
             string messaggioText = "";
-            List<Giocatore> risultati = lista1.RicercaSquadra(cercasquadraTextBox.Texts);
+            List<Giocatore> risultati = lista1.RicercaSquadra(listasquadreComboBox.Texts);
 
             for (int i = 0; i < risultati.Count; i++)
             {
@@ -145,16 +154,16 @@ namespace Gestione_Calciatori
             }
 
             MessageBox.Show("Ecco i risultati della ricerca: \n\n" +
-                "Componenti della squadra " + cercasquadraTextBox.Texts + ":\n" + messaggioText,
+                "Componenti della squadra " + listasquadreComboBox.Texts + ":\n" + messaggioText,
                 "Informazione",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-            cercasquadraTextBox.Texts = "";
+            listasquadreComboBox.SelectedIndex = -1;
         }
 
         private void giocatoreinforButton_Click(object sender, EventArgs e)
         {
-            bool esito = lista1.Rimozione(giocatoreinforTextBox.Texts);
+            bool esito = lista1.Rimozione(listagiocatoriinforComboBox.Texts);
             if (esito == false)
             {
                 MessageBox.Show("L'operazione non è andata a buon fine:\n" +
@@ -174,11 +183,50 @@ namespace Gestione_Calciatori
                 giocatoriListBox.DataSource = lista1.ListaCompleta();
                 giocatoriListBox.DisplayMember = "Nome";
                 giocatoriListBox.ValueMember = "Nome";
-                giocatoreinforTextBox.Texts = "";
+
+                AggiornamentoDati();
+                listasquadreComboBox.SelectedIndex = -1;
             }
         }
 
+        private void mediaButton_Click(object sender, EventArgs e)
+        {
+            int somma = 0;
+
+            List<Giocatore> calcolo = lista1.ListaCompleta();
+
+            foreach (Giocatore gioc1 in calcolo)
+            {
+                somma += gioc1.Partite;
+            }
+            int media = somma / calcolo.Count;
+
+            MessageBox.Show("Ecco la media delle partite giocate:\n\n" +
+                media.ToString(),
+                "Informazione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void zerogoalButton_Click(object sender, EventArgs e)
+        {
+            List<Giocatore> raccoltadati = lista1.ListaCompleta();
+            string messaggioText = "";
+
+            for (int i = 0; i < raccoltadati.Count; i++)
+            {
+                if (raccoltadati[i].Goal == 0) messaggioText += "\n" + raccoltadati[i].Nome;
+            }
+
+            MessageBox.Show("Ecco i risultati della ricerca:\n\n" +
+                "Giocatori con zero goal:\n" + messaggioText,
+                "Informazione",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
         #endregion
+
 
         #region ListBox
 
@@ -209,13 +257,63 @@ namespace Gestione_Calciatori
 
         #endregion
 
+        #region ComboBox
+
+        private void listagiocatoriComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listagiocatoriComboBox.SelectedIndex < 0)
+            {
+                cercagoalButton.BackColor = Color.FromArgb(91, 136, 181);
+                cercagoalButton.Enabled = false;
+            }
+            else
+            {
+                cercagoalButton.BackColor = Color.FromArgb(38, 110, 181);
+                cercagoalButton.Enabled = true;
+            }
+        }
+
+        private void listasquadreComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listasquadreComboBox.SelectedIndex < 0)
+            {
+                cercasquadraButton.BackColor = Color.FromArgb(91, 136, 181);
+                cercasquadraButton.Enabled = false;
+            }
+            else
+            {
+                cercasquadraButton.BackColor = Color.FromArgb(38, 110, 181);
+                cercasquadraButton.Enabled = true;
+            }
+        }
+
+        private void listagiocatoriinforComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listagiocatoriinforComboBox.SelectedIndex < 0)
+            {
+                giocatoreinforButton.BackColor = Color.FromArgb(91, 136, 181);
+                giocatoreinforButton.Enabled = false;
+            }
+            else
+            {
+                giocatoreinforButton.BackColor = Color.FromArgb(38, 110, 181);
+                giocatoreinforButton.Enabled = true;
+            }
+        }
+
+        #endregion
+
+
         #region TextBox
 
         private void squadraTextBox__TextChanged(object sender, EventArgs e)
         {
             squadraTextBox.BackColor = Color.FromArgb(38, 110, 181);
 
-            if (squadraTextBox.Texts.Length <= 0 || giocatoriListBox.SelectedIndex == -1)
+            if ((squadraTextBox.Texts.Length <= 0
+                && partiteTextBox.Texts.Length <= 0
+                && goalTextBox.Texts.Length <= 0)
+                || giocatoriListBox.SelectedIndex == -1)
             {
                 ripristinaButton.BackColor = Color.FromArgb(224, 150, 150);
                 ripristinaButton.Enabled = false;
@@ -235,7 +333,10 @@ namespace Gestione_Calciatori
         {
             partiteTextBox.BackColor = Color.FromArgb(38, 110, 181);
 
-            if (partiteTextBox.Texts.Length <= 0 || giocatoriListBox.SelectedIndex == -1)
+            if ((squadraTextBox.Texts.Length <= 0
+                && partiteTextBox.Texts.Length <= 0
+                && goalTextBox.Texts.Length <= 0)
+                || giocatoriListBox.SelectedIndex == -1)
             {
                 ripristinaButton.BackColor = Color.FromArgb(224, 150, 150);
                 ripristinaButton.Enabled = false;
@@ -255,7 +356,10 @@ namespace Gestione_Calciatori
         {
             goalTextBox.BackColor = Color.FromArgb(38, 110, 181);
 
-            if (goalTextBox.Texts.Length <= 0 || giocatoriListBox.SelectedIndex == -1)
+            if ((squadraTextBox.Texts.Length <= 0
+                && partiteTextBox.Texts.Length <= 0
+                && goalTextBox.Texts.Length <= 0)
+                || giocatoriListBox.SelectedIndex == -1)
             {
                 ripristinaButton.BackColor = Color.FromArgb(224, 150, 150);
                 ripristinaButton.Enabled = false;
@@ -271,49 +375,29 @@ namespace Gestione_Calciatori
             }
         }
 
-        private void cercagoalTextBox__TextChanged(object sender, EventArgs e)
-        {
-            if (cercagoalTextBox.Texts.Length <= 0)
-            {
-                cercagoalButton.BackColor = Color.FromArgb(91, 136, 181);
-                cercagoalButton.Enabled = false;
-            }
-            else
-            {
-                cercagoalButton.BackColor = Color.FromArgb(38, 110, 181);
-                cercagoalButton.Enabled = true;
-            }
-        }
+        #endregion
 
-        private void cercasquadraTextBox__TextChanged(object sender, EventArgs e)
-        {
-            if (cercasquadraTextBox.Texts.Length <= 0)
-            {
-                cercasquadraButton.BackColor = Color.FromArgb(91, 136, 181);
-                cercasquadraButton.Enabled = false;
-            }
-            else
-            {
-                cercasquadraButton.BackColor = Color.FromArgb(38, 110, 181);
-                cercasquadraButton.Enabled = true;
-            }
-        }
 
-        private void giocatoreinforTextBox__TextChanged(object sender, EventArgs e)
+        #region Funzioni
+
+        private void AggiornamentoDati()
         {
-            if (giocatoreinforTextBox.Texts.Length <= 0)
-            {
-                giocatoreinforButton.BackColor = Color.FromArgb(91, 136, 181);
-                giocatoreinforButton.Enabled = false;
-            }
-            else
-            {
-                giocatoreinforButton.BackColor = Color.FromArgb(38, 110, 181);
-                giocatoreinforButton.Enabled = true;
-            }
+
+            listagiocatoriComboBox.DataSource = lista1.ListaCompleta();
+            listagiocatoriComboBox.DisplayMember = "Nome";
+            listagiocatoriComboBox.ValueMember = "Nome";
+            listagiocatoriComboBox.SelectedIndex = -1;
+
+            listasquadreComboBox.DataSource = lista1.ListaSquadre();
+            listasquadreComboBox.SelectedIndex = -1;
+
+            listagiocatoriinforComboBox.DataSource = lista1.ListaCompleta();
+            listagiocatoriinforComboBox.DisplayMember = "Nome";
+            listagiocatoriinforComboBox.ValueMember = "Nome";
+            listagiocatoriinforComboBox.SelectedIndex = -1;
+
         }
 
         #endregion
-
     }
 }

@@ -113,29 +113,84 @@
 
             do
             {
-                if (p1.Nome == "")
-                {
-                    p1 = p1.Next;
-                }
+                if (p1 == null) end = true;
                 else
                 {
-                    if (p1.Next == null)
+                    if (p1.Nome == "")
                     {
-                        end = true;
-                        listacompleta.Add(p1);
+                        p1 = p1.Next;
                     }
                     else
                     {
-                        end = false;
-                        listacompleta.Add(p1);
-                        p1 = p1.Next;
+                        if (p1.Next == null)
+                        {
+                            end = true;
+                            listacompleta.Add(p1);
+                        }
+                        else
+                        {
+                            end = false;
+                            listacompleta.Add(p1);
+                            p1 = p1.Next;
+                        }
                     }
+
                 }
             }
             while (!end);
 
             return listacompleta;
         }
+
+        public List<string> ListaSquadre()
+        {
+            List<string> listasquadre = new();
+            bool end = false;
+            Giocatore p1;
+            p1 = testa;
+
+            do
+            {
+                if (p1 == null) end = true;
+                else
+                {
+                    if (p1.Squadra == "")
+                    {
+                        p1 = p1.Next;
+                    }
+                    else
+                    {
+                        if (p1.Next == null)
+                        {
+                            if (!listasquadre.Contains(p1.Squadra))
+                            {
+                                end = true;
+                                listasquadre.Add(p1.Squadra);
+                            }
+                            else end = true;
+                        }
+                        else
+                        {
+                            if (!listasquadre.Contains(p1.Squadra))
+                            {
+                                end = false;
+                                listasquadre.Add(p1.Squadra);
+                                p1 = p1.Next;
+                            }
+                            else
+                            {
+                                end = false;
+                                p1 = p1.Next;
+                            }
+                        }
+                    }
+                }
+            }
+            while (!end);
+
+            return listasquadre;
+        }
+
         #endregion
 
         #region Altro
@@ -218,6 +273,8 @@
 
             return squadra;
         }
+
+
 
         #endregion
     }

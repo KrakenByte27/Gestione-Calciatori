@@ -286,7 +286,7 @@ namespace CustomControls.RJControls
         #region -> Private methods
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = this.Width - 2;
+            cmbList.Width = this.Width-5;
             cmbList.Location = new Point()
             {
                 X = this.Width - this.Padding.Right - cmbList.Width,

@@ -44,18 +44,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.altroPanel = new Gestione_Calciatori.RoundedPanel();
+            this.listagiocatoriinforComboBox = new CustomControls.RJControls.RJComboBox();
+            this.listagiocatoriComboBox = new CustomControls.RJControls.RJComboBox();
             this.giocatoreinforButton = new CustomControls.RJControls.RJButton();
             this.cercasquadraButton = new CustomControls.RJControls.RJButton();
             this.cercagoalButton = new CustomControls.RJControls.RJButton();
-            this.giocatoreinforTextBox = new CustomControls.RJControls.RJTextBox();
-            this.cercasquadraTextBox = new CustomControls.RJControls.RJTextBox();
-            this.cercagoalTextBox = new CustomControls.RJControls.RJTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.zerogoalButton = new CustomControls.RJControls.RJButton();
+            this.mediaButton = new CustomControls.RJControls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.listasquadreComboBox = new CustomControls.RJControls.RJComboBox();
             this.listaPanel.SuspendLayout();
             this.datiPanel.SuspendLayout();
             this.altroPanel.SuspendLayout();
@@ -308,23 +308,61 @@
             // 
             this.altroPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.altroPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.altroPanel.Controls.Add(this.listasquadreComboBox);
+            this.altroPanel.Controls.Add(this.listagiocatoriinforComboBox);
+            this.altroPanel.Controls.Add(this.listagiocatoriComboBox);
             this.altroPanel.Controls.Add(this.giocatoreinforButton);
             this.altroPanel.Controls.Add(this.cercasquadraButton);
             this.altroPanel.Controls.Add(this.cercagoalButton);
-            this.altroPanel.Controls.Add(this.giocatoreinforTextBox);
-            this.altroPanel.Controls.Add(this.cercasquadraTextBox);
-            this.altroPanel.Controls.Add(this.cercagoalTextBox);
             this.altroPanel.Controls.Add(this.label10);
             this.altroPanel.Controls.Add(this.label9);
             this.altroPanel.Controls.Add(this.label8);
-            this.altroPanel.Controls.Add(this.rjButton2);
-            this.altroPanel.Controls.Add(this.rjButton1);
+            this.altroPanel.Controls.Add(this.zerogoalButton);
+            this.altroPanel.Controls.Add(this.mediaButton);
             this.altroPanel.Controls.Add(this.label2);
             this.altroPanel.Edge = 20;
             this.altroPanel.Location = new System.Drawing.Point(12, 396);
             this.altroPanel.Name = "altroPanel";
             this.altroPanel.Size = new System.Drawing.Size(628, 237);
             this.altroPanel.TabIndex = 6;
+            // 
+            // listagiocatoriinforComboBox
+            // 
+            this.listagiocatoriinforComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listagiocatoriinforComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listagiocatoriinforComboBox.BorderSize = 2;
+            this.listagiocatoriinforComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.listagiocatoriinforComboBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listagiocatoriinforComboBox.ForeColor = System.Drawing.Color.White;
+            this.listagiocatoriinforComboBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listagiocatoriinforComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listagiocatoriinforComboBox.ListTextColor = System.Drawing.Color.White;
+            this.listagiocatoriinforComboBox.Location = new System.Drawing.Point(151, 176);
+            this.listagiocatoriinforComboBox.Name = "listagiocatoriinforComboBox";
+            this.listagiocatoriinforComboBox.Padding = new System.Windows.Forms.Padding(2);
+            this.listagiocatoriinforComboBox.Size = new System.Drawing.Size(191, 34);
+            this.listagiocatoriinforComboBox.TabIndex = 19;
+            this.listagiocatoriinforComboBox.Texts = "";
+            this.listagiocatoriinforComboBox.OnSelectedIndexChanged += new System.EventHandler(this.listagiocatoriinforComboBox_OnSelectedIndexChanged);
+            // 
+            // listagiocatoriComboBox
+            // 
+            this.listagiocatoriComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listagiocatoriComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listagiocatoriComboBox.BorderSize = 2;
+            this.listagiocatoriComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.listagiocatoriComboBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listagiocatoriComboBox.ForeColor = System.Drawing.Color.White;
+            this.listagiocatoriComboBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listagiocatoriComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listagiocatoriComboBox.ListTextColor = System.Drawing.Color.White;
+            this.listagiocatoriComboBox.Location = new System.Drawing.Point(151, 48);
+            this.listagiocatoriComboBox.Name = "listagiocatoriComboBox";
+            this.listagiocatoriComboBox.Padding = new System.Windows.Forms.Padding(2);
+            this.listagiocatoriComboBox.Size = new System.Drawing.Size(191, 34);
+            this.listagiocatoriComboBox.TabIndex = 17;
+            this.listagiocatoriComboBox.Texts = "";
+            this.listagiocatoriComboBox.OnSelectedIndexChanged += new System.EventHandler(this.listagiocatoriComboBox_OnSelectedIndexChanged);
             // 
             // giocatoreinforButton
             // 
@@ -338,9 +376,9 @@
             this.giocatoreinforButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.giocatoreinforButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.giocatoreinforButton.ForeColor = System.Drawing.Color.White;
-            this.giocatoreinforButton.Location = new System.Drawing.Point(346, 174);
+            this.giocatoreinforButton.Location = new System.Drawing.Point(346, 175);
             this.giocatoreinforButton.Name = "giocatoreinforButton";
-            this.giocatoreinforButton.Size = new System.Drawing.Size(69, 38);
+            this.giocatoreinforButton.Size = new System.Drawing.Size(70, 37);
             this.giocatoreinforButton.TabIndex = 16;
             this.giocatoreinforButton.Text = "Invia";
             this.giocatoreinforButton.TextColor = System.Drawing.Color.White;
@@ -361,7 +399,7 @@
             this.cercasquadraButton.ForeColor = System.Drawing.Color.White;
             this.cercasquadraButton.Location = new System.Drawing.Point(346, 110);
             this.cercasquadraButton.Name = "cercasquadraButton";
-            this.cercasquadraButton.Size = new System.Drawing.Size(69, 38);
+            this.cercasquadraButton.Size = new System.Drawing.Size(70, 37);
             this.cercasquadraButton.TabIndex = 15;
             this.cercasquadraButton.Text = "Cerca";
             this.cercasquadraButton.TextColor = System.Drawing.Color.White;
@@ -382,81 +420,12 @@
             this.cercagoalButton.ForeColor = System.Drawing.Color.White;
             this.cercagoalButton.Location = new System.Drawing.Point(346, 46);
             this.cercagoalButton.Name = "cercagoalButton";
-            this.cercagoalButton.Size = new System.Drawing.Size(69, 38);
+            this.cercagoalButton.Size = new System.Drawing.Size(70, 37);
             this.cercagoalButton.TabIndex = 13;
             this.cercagoalButton.Text = "Cerca";
             this.cercagoalButton.TextColor = System.Drawing.Color.White;
             this.cercagoalButton.UseVisualStyleBackColor = false;
             this.cercagoalButton.Click += new System.EventHandler(this.cercagoalButton_Click);
-            // 
-            // giocatoreinforTextBox
-            // 
-            this.giocatoreinforTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.giocatoreinforTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.giocatoreinforTextBox.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(189)))), ((int)(((byte)(227)))));
-            this.giocatoreinforTextBox.BorderRadius = 10;
-            this.giocatoreinforTextBox.BorderSize = 2;
-            this.giocatoreinforTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.giocatoreinforTextBox.ForeColor = System.Drawing.Color.White;
-            this.giocatoreinforTextBox.Location = new System.Drawing.Point(148, 174);
-            this.giocatoreinforTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.giocatoreinforTextBox.Multiline = false;
-            this.giocatoreinforTextBox.Name = "giocatoreinforTextBox";
-            this.giocatoreinforTextBox.Padding = new System.Windows.Forms.Padding(15, 7, 15, 7);
-            this.giocatoreinforTextBox.PasswordChar = false;
-            this.giocatoreinforTextBox.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.giocatoreinforTextBox.PlaceholderText = "";
-            this.giocatoreinforTextBox.Size = new System.Drawing.Size(195, 38);
-            this.giocatoreinforTextBox.TabIndex = 14;
-            this.giocatoreinforTextBox.Texts = "";
-            this.giocatoreinforTextBox.UnderlinedStyle = false;
-            this.giocatoreinforTextBox._TextChanged += new System.EventHandler(this.giocatoreinforTextBox__TextChanged);
-            // 
-            // cercasquadraTextBox
-            // 
-            this.cercasquadraTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.cercasquadraTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.cercasquadraTextBox.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(189)))), ((int)(((byte)(227)))));
-            this.cercasquadraTextBox.BorderRadius = 10;
-            this.cercasquadraTextBox.BorderSize = 2;
-            this.cercasquadraTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cercasquadraTextBox.ForeColor = System.Drawing.Color.White;
-            this.cercasquadraTextBox.Location = new System.Drawing.Point(148, 110);
-            this.cercasquadraTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.cercasquadraTextBox.Multiline = false;
-            this.cercasquadraTextBox.Name = "cercasquadraTextBox";
-            this.cercasquadraTextBox.Padding = new System.Windows.Forms.Padding(15, 7, 15, 7);
-            this.cercasquadraTextBox.PasswordChar = false;
-            this.cercasquadraTextBox.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.cercasquadraTextBox.PlaceholderText = "";
-            this.cercasquadraTextBox.Size = new System.Drawing.Size(195, 38);
-            this.cercasquadraTextBox.TabIndex = 13;
-            this.cercasquadraTextBox.Texts = "";
-            this.cercasquadraTextBox.UnderlinedStyle = false;
-            this.cercasquadraTextBox._TextChanged += new System.EventHandler(this.cercasquadraTextBox__TextChanged);
-            // 
-            // cercagoalTextBox
-            // 
-            this.cercagoalTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.cercagoalTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.cercagoalTextBox.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(189)))), ((int)(((byte)(227)))));
-            this.cercagoalTextBox.BorderRadius = 10;
-            this.cercagoalTextBox.BorderSize = 2;
-            this.cercagoalTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cercagoalTextBox.ForeColor = System.Drawing.Color.White;
-            this.cercagoalTextBox.Location = new System.Drawing.Point(148, 46);
-            this.cercagoalTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.cercagoalTextBox.Multiline = false;
-            this.cercagoalTextBox.Name = "cercagoalTextBox";
-            this.cercagoalTextBox.Padding = new System.Windows.Forms.Padding(15, 7, 15, 7);
-            this.cercagoalTextBox.PasswordChar = false;
-            this.cercagoalTextBox.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.cercagoalTextBox.PlaceholderText = "";
-            this.cercagoalTextBox.Size = new System.Drawing.Size(195, 38);
-            this.cercagoalTextBox.TabIndex = 12;
-            this.cercagoalTextBox.Texts = "";
-            this.cercagoalTextBox.UnderlinedStyle = false;
-            this.cercagoalTextBox._TextChanged += new System.EventHandler(this.cercagoalTextBox__TextChanged);
             // 
             // label10
             // 
@@ -494,43 +463,45 @@
             this.label8.Text = "Ricerca goal\r\nper giocatore";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rjButton2
+            // zerogoalButton
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.rjButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.rjButton2.BorderRadius = 10;
-            this.rjButton2.BorderSize = 2;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(431, 132);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(170, 80);
-            this.rjButton2.TabIndex = 7;
-            this.rjButton2.Text = "Giocatori con 0 goal";
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
+            this.zerogoalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.zerogoalButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.zerogoalButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.zerogoalButton.BorderRadius = 10;
+            this.zerogoalButton.BorderSize = 2;
+            this.zerogoalButton.FlatAppearance.BorderSize = 0;
+            this.zerogoalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.zerogoalButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zerogoalButton.ForeColor = System.Drawing.Color.White;
+            this.zerogoalButton.Location = new System.Drawing.Point(431, 132);
+            this.zerogoalButton.Name = "zerogoalButton";
+            this.zerogoalButton.Size = new System.Drawing.Size(170, 80);
+            this.zerogoalButton.TabIndex = 7;
+            this.zerogoalButton.Text = "Giocatori con 0 goal";
+            this.zerogoalButton.TextColor = System.Drawing.Color.White;
+            this.zerogoalButton.UseVisualStyleBackColor = false;
+            this.zerogoalButton.Click += new System.EventHandler(this.zerogoalButton_Click);
             // 
-            // rjButton1
+            // mediaButton
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.rjButton1.BorderRadius = 10;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(431, 46);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(170, 80);
-            this.rjButton1.TabIndex = 6;
-            this.rjButton1.Text = "Media partite giocate";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.mediaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.mediaButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.mediaButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.mediaButton.BorderRadius = 10;
+            this.mediaButton.BorderSize = 2;
+            this.mediaButton.FlatAppearance.BorderSize = 0;
+            this.mediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mediaButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mediaButton.ForeColor = System.Drawing.Color.White;
+            this.mediaButton.Location = new System.Drawing.Point(431, 46);
+            this.mediaButton.Name = "mediaButton";
+            this.mediaButton.Size = new System.Drawing.Size(170, 80);
+            this.mediaButton.TabIndex = 6;
+            this.mediaButton.Text = "Media partite giocate";
+            this.mediaButton.TextColor = System.Drawing.Color.White;
+            this.mediaButton.UseVisualStyleBackColor = false;
+            this.mediaButton.Click += new System.EventHandler(this.mediaButton_Click);
             // 
             // label2
             // 
@@ -542,6 +513,24 @@
             this.label2.Size = new System.Drawing.Size(67, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "Altro";
+            // 
+            // listasquadreComboBox
+            // 
+            this.listasquadreComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listasquadreComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listasquadreComboBox.BorderSize = 2;
+            this.listasquadreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.listasquadreComboBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listasquadreComboBox.ForeColor = System.Drawing.Color.White;
+            this.listasquadreComboBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listasquadreComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listasquadreComboBox.ListTextColor = System.Drawing.Color.White;
+            this.listasquadreComboBox.Location = new System.Drawing.Point(151, 112);
+            this.listasquadreComboBox.Name = "listasquadreComboBox";
+            this.listasquadreComboBox.Padding = new System.Windows.Forms.Padding(2);
+            this.listasquadreComboBox.Size = new System.Drawing.Size(191, 34);
+            this.listasquadreComboBox.TabIndex = 20;
+            this.listasquadreComboBox.Texts = "";
             // 
             // homeForm
             // 
@@ -590,16 +579,16 @@
         private CustomControls.RJControls.RJButton ripristinaButton;
         private CustomControls.RJControls.RJTextBox partiteTextBox;
         private CustomControls.RJControls.RJTextBox goalTextBox;
-        private CustomControls.RJControls.RJTextBox giocatoreinforTextBox;
-        private CustomControls.RJControls.RJTextBox cercasquadraTextBox;
-        private CustomControls.RJControls.RJTextBox cercagoalTextBox;
         private Label label10;
         private Label label9;
         private Label label8;
-        private CustomControls.RJControls.RJButton rjButton2;
-        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton zerogoalButton;
+        private CustomControls.RJControls.RJButton mediaButton;
         private CustomControls.RJControls.RJButton giocatoreinforButton;
         private CustomControls.RJControls.RJButton cercasquadraButton;
         private CustomControls.RJControls.RJButton cercagoalButton;
+        private CustomControls.RJControls.RJComboBox listagiocatoriComboBox;
+        private CustomControls.RJControls.RJComboBox listagiocatoriinforComboBox;
+        private CustomControls.RJControls.RJComboBox listasquadreComboBox;
     }
 }
