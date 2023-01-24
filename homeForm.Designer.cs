@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.altroPanel = new Gestione_Calciatori.RoundedPanel();
+            this.listasquadreComboBox = new CustomControls.RJControls.RJComboBox();
             this.listagiocatoriinforComboBox = new CustomControls.RJControls.RJComboBox();
             this.listagiocatoriComboBox = new CustomControls.RJControls.RJComboBox();
             this.giocatoreinforButton = new CustomControls.RJControls.RJButton();
@@ -55,7 +56,6 @@
             this.zerogoalButton = new CustomControls.RJControls.RJButton();
             this.mediaButton = new CustomControls.RJControls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.listasquadreComboBox = new CustomControls.RJControls.RJComboBox();
             this.listaPanel.SuspendLayout();
             this.datiPanel.SuspendLayout();
             this.altroPanel.SuspendLayout();
@@ -326,6 +326,25 @@
             this.altroPanel.Size = new System.Drawing.Size(628, 237);
             this.altroPanel.TabIndex = 6;
             // 
+            // listasquadreComboBox
+            // 
+            this.listasquadreComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listasquadreComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listasquadreComboBox.BorderSize = 2;
+            this.listasquadreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.listasquadreComboBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listasquadreComboBox.ForeColor = System.Drawing.Color.White;
+            this.listasquadreComboBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.listasquadreComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
+            this.listasquadreComboBox.ListTextColor = System.Drawing.Color.White;
+            this.listasquadreComboBox.Location = new System.Drawing.Point(151, 112);
+            this.listasquadreComboBox.Name = "listasquadreComboBox";
+            this.listasquadreComboBox.Padding = new System.Windows.Forms.Padding(2);
+            this.listasquadreComboBox.Size = new System.Drawing.Size(191, 34);
+            this.listasquadreComboBox.TabIndex = 20;
+            this.listasquadreComboBox.Texts = "";
+            this.listasquadreComboBox.OnSelectedIndexChanged += new System.EventHandler(this.listasquadreComboBox_OnSelectedIndexChanged);
+            // 
             // listagiocatoriinforComboBox
             // 
             this.listagiocatoriinforComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
@@ -513,24 +532,6 @@
             this.label2.Size = new System.Drawing.Size(67, 30);
             this.label2.TabIndex = 5;
             this.label2.Text = "Altro";
-            // 
-            // listasquadreComboBox
-            // 
-            this.listasquadreComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.listasquadreComboBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.listasquadreComboBox.BorderSize = 2;
-            this.listasquadreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.listasquadreComboBox.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listasquadreComboBox.ForeColor = System.Drawing.Color.White;
-            this.listasquadreComboBox.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.listasquadreComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(110)))), ((int)(((byte)(181)))));
-            this.listasquadreComboBox.ListTextColor = System.Drawing.Color.White;
-            this.listasquadreComboBox.Location = new System.Drawing.Point(151, 112);
-            this.listasquadreComboBox.Name = "listasquadreComboBox";
-            this.listasquadreComboBox.Padding = new System.Windows.Forms.Padding(2);
-            this.listasquadreComboBox.Size = new System.Drawing.Size(191, 34);
-            this.listasquadreComboBox.TabIndex = 20;
-            this.listasquadreComboBox.Texts = "";
             // 
             // homeForm
             // 
